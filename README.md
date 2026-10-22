@@ -16,29 +16,20 @@ The project demonstrates how to retrieve historical financial market data, trans
 
 ## Architecture
 
-```text
-Binance REST API
-       |
-       v
-Python (Requests)
-       |
-       v
-Historical OHLCV Data
-       |
-       v
-PyArrow
-       |
-       v
-RecordBatch / RecordBatchReader
-       |
-       v
-Apache Parquet
-       |
-       v
-DuckDB
-       |
-       v
-SQL Analytics
+```mermaid
+flowchart TD
+    A["Binance REST API"] --> B["Python — Requests"]
+    B --> C["Historical OHLCV Data"]
+    C --> D["PyArrow"]
+    D --> E["RecordBatch / RecordBatchReader"]
+    E --> F[("Apache Parquet")]
+    F --> G["DuckDB"]
+    G --> H["SQL Analytics"]
+
+    style A fill:#f0b90b,color:#000,stroke:#d49f00
+    style F fill:#2563eb,color:#fff,stroke:#1d4ed8
+    style G fill:#16a34a,color:#fff,stroke:#15803d
+    style H fill:#334155,color:#fff,stroke:#1e293b
 ```
 
 ## Features
